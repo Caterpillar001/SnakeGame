@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="一个使用 HTML5 Canvas 制作的现代风格贪吃蛇小游戏。"
+    />
+    <title>霓光贪吃蛇</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="game-header">
+        <div>
+          <p class="eyebrow">RETRO ARCADE</p>
+          <h1>霓光贪吃蛇</h1>
+        </div>
+
+        <div class="scoreboard" aria-label="游戏计分板">
+          <div class="score-card">
+            <span class="score-label">当前得分</span>
+            <strong id="score" class="score-value">0</strong>
+          </div>
+          <div class="score-card score-card--high">
+            <span class="score-label">最高分</span>
+            <strong id="high-score" class="score-value">0</strong>
+          </div>
+        </div>
+      </header>
+
+      <section class="game-stage" aria-label="贪吃蛇游戏区域">
+        <canvas
+          id="game-canvas"
+          width="600"
+          height="600"
+          aria-label="贪吃蛇游戏画布"
+        ></canvas>
+        <div class="stage-glow" aria-hidden="true"></div>
+      </section>
+
+      <footer class="game-footer">
+        <div class="status-group">
+          <span id="status" class="status-pill" data-state="playing">
+            <span class="status-dot" aria-hidden="true"></span>
+            游戏进行中
+          </span>
+          <button id="restart-button" class="restart-button" type="button">
+            重新开始
+          </button>
+        </div>
+
+        <div class="controls" aria-label="操作说明">
+          <span><kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd> 移动</span>
+          <span><kbd>Space</kbd> 暂停</span>
+          <span><kbd>R</kbd> 重开</span>
+          <span class="bomb-hint">炸弹会定时换位</span>
+        </div>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
